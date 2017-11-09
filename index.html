@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Psychic Game!!!</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+    <div id="game">
+        <h2>Guess What Letter I Am Thinking Of...</h2>
+    </div>
+    <script type="text/javascript">
+
+        var computerChoice=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+        var wins = 0;
+        var losses = 0;
+        var guessesLeft = 15;
+        var guessesSoFar = 0;
+
+        document.onkeyup = function(event) {
+
+            var userGuess = event.key;
+
+            var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
+
+            if ((userGuess === "a") || (userGuess === "b")) {
+            
+            if ((userGuess === computerGuess))
+            wins++; 
+           } if ((userGuess === computerGuess)){
+           guessesSoFar++;
+           } if ((userGuess != computerGuess)){
+            losses++;
+           } if ((userGuess != computerGuess)){
+           guessesSoFar++;
+           } if ((userGuess === computerGuess)){
+            guessesLeft--;
+           } if ((userGuess != computerGuess)){
+            guessesLeft--;
+           } if ((guessesLeft === 0)){
+               alert("Game Over!");
+           } 
+
+           for (guessesLeft = 10; guessLeft <0; i++){
+               
+           }
+
+            var html =
+          "<p>Wins: " + wins + "</p>" +
+          "<p>Losses: " + losses + "</p>" +
+          "<p>Guesses Left: " + guessesLeft + "</p>" +
+          "<p>Guesses Used: " + guessesSoFar + "</p>" 
+
+        document.getElementById("game").innerHTML = html;
+        };
+
+    </script>
+     
+</body>
+
+</html>
